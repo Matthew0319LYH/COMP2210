@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import java.util.LinkedList;
 import java.util.List;
+=======
+import java.util.List;
+import java.util.LinkedList;
+>>>>>>> cf41ef796647a6a74cfac8bffeab7c21c7f5f940
 import java.util.Random;
 
 /**
@@ -13,11 +18,16 @@ import java.util.Random;
  * than the first or last.
  *
  * @author   Dean Hendrix (dh@auburn.edu)
+<<<<<<< HEAD
  * @version  2015-09-01
+=======
+ * @version  2015-02-09
+>>>>>>> cf41ef796647a6a74cfac8bffeab7c21c7f5f940
  *
  */
 public class EarlyExit {
 
+<<<<<<< HEAD
    // size of the list to be searched
    private static final int N = 1_000_000;
 
@@ -34,6 +44,15 @@ public class EarlyExit {
      // generate timing data for "average case" searches
       long start;
       long elapsedTime;
+=======
+   public static void main(String[] args) {
+      int N        = 1_000_000;     // size of the list to be searched
+      int NUM_RUNS = 100;           // number of timing runs
+      int SECONDS  = 1_000_000_000; // 1.0E9 ns per second
+   
+     // generate timing data for "average case" searches
+      long start, elapsedTime;
+>>>>>>> cf41ef796647a6a74cfac8bffeab7c21c7f5f940
       double avgTimeA = 0d;
       double avgTimeB = 0d;
       Integer target = 42;
@@ -59,11 +78,16 @@ public class EarlyExit {
       System.out.printf("%s%4.3f%s\n","With early exit:    ", avgTimeB, " seconds");
    }
 
+<<<<<<< HEAD
   /** 
    * Searches a List with linear search.
    * Exits only after examining the entire list.
    */
    private static <T> boolean searchA(List<T> list, T target) {
+=======
+   // exits only after examining the entire list
+   private static <T> boolean searchA(List<T> list, T target){
+>>>>>>> cf41ef796647a6a74cfac8bffeab7c21c7f5f940
       boolean found = false;
       for (T element : list) {
          if (element.equals(target)) {
@@ -73,12 +97,17 @@ public class EarlyExit {
       return found;
    }
 
+<<<<<<< HEAD
 
   /** 
    * Searches a List with linear search.
    * Exits as soon as status of search is known.
    */
    private static <T> boolean searchB(List<T> list, T target) {
+=======
+   // exits as soon as it knows the status of the search
+   private static <T> boolean searchB(List<T> list, T target){
+>>>>>>> cf41ef796647a6a74cfac8bffeab7c21c7f5f940
       for (T element : list) {
          if (element.equals(target)) {
             return true;
@@ -87,11 +116,16 @@ public class EarlyExit {
       return false;
    }
 
+<<<<<<< HEAD
 
   /**
    * Fills a list with N random integer values, then places the
    * specified seed value at a random index i, 0 < i < N.
    */
+=======
+   // fills a list with N random integer values, then places the
+   // specified seed value at a random index i, 0 < i < N.
+>>>>>>> cf41ef796647a6a74cfac8bffeab7c21c7f5f940
    private static List<Integer> getRandomListWithSeed(int N, int seed) {
       Random rng = new Random();
       List<Integer> list = new LinkedList<Integer>();
