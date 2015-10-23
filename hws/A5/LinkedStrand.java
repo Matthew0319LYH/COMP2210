@@ -120,8 +120,11 @@ public class LinkedStrand implements DnaStrand {
         if (front == null || front != rear)
             throw new IllegalStateException();
         DnaStrand ret = new LinkedStrand();
-        String s = front.dnaInfo;
+        //String s = front.dnaInfo;
+        String s = this.toString();
         int pos = s.indexOf(enzyme);
+        if (pos == -1)
+            return EMPTY_STRAND;
         while (pos >= 0) {
             ret.append(s.substring(0, pos));
             ret.append(splice);
@@ -201,12 +204,13 @@ public class LinkedStrand implements DnaStrand {
     public DnaStrand append(String dna) {
         // YOU MUST COMPLETE THIS METHOD
         //return null;
-        Node n = new Node(dna, null);
+        if (dna == null || dna.compareTo("") == 0)
+            return this;
         if (front == null) {
-            front = rear = n;
+            front = rear = new Node(dna, null);
         }
         else {
-            rear.next = n;
+            rear.next = new Node(dna, null);
             rear = rear.next;
         }
         size += dna.length();
