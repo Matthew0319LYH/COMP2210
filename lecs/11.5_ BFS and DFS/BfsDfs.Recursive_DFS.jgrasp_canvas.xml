@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Canvas xmlns="http://www.jgrasp.org">
+  <Language>Java</Language>
+  <ShowTypes>false</ShowTypes>
+  <Version>2</Version>
+  <Grid>
+    <Snap>true</Snap>
+    <Show>false</Show>
+  </Grid>
+  <Scope id="0">
+    <Name>dfs_recursive</Name>
+    <Signature>(LBfsDfs$Position;)V</Signature>
+    <DeclaringType>BfsDfs</DeclaringType>
+    <Depth>2</Depth>
+  </Scope>
+  <Frame>
+    <Bounds>
+      <AutoSize>true</AutoSize>
+      <X>250</X>
+      <Y>360</Y>
+      <W>173</W>
+      <H>90</H>
+    </Bounds>
+    <Viewer>
+      <Expression>p.neighbors()</Expression>
+      <ViewerClass>java__lang__Object_LinkedView</ViewerClass>
+      <ViewerData>
+        <ViewData>
+          <Embedded>true</Embedded>
+        </ViewData>
+      </ViewerData>
+    </Viewer>
+  </Frame>
+  <Frame>
+    <Bounds>
+      <AutoSize>true</AutoSize>
+      <X>87</X>
+      <Y>159</Y>
+      <W>372</W>
+      <H>166</H>
+    </Bounds>
+    <Viewer>
+      <ScopeID>0</ScopeID>
+      <Expression>this.grid</Expression>
+      <ViewerClass>_X_A_A_ToStringView</ViewerClass>
+      <ViewerData>
+        <Cols>5</Cols>
+      </ViewerData>
+    </Viewer>
+    <ScopeTest>None</ScopeTest>
+  </Frame>
+  <Frame>
+    <Bounds>
+      <AutoSize>true</AutoSize>
+      <X>487</X>
+      <Y>159</Y>
+      <W>372</W>
+      <H>166</H>
+    </Bounds>
+    <Viewer>
+      <ScopeID>0</ScopeID>
+      <Expression>this.visited</Expression>
+      <ViewerClass>_X_A_A_ToStringView</ViewerClass>
+      <ViewerData>
+        <Cols>5</Cols>
+      </ViewerData>
+    </Viewer>
+    <ScopeTest>None</ScopeTest>
+  </Frame>
+  <Frame>
+    <Bounds>
+      <AutoSize>true</AutoSize>
+      <X>180</X>
+      <Y>420</Y>
+      <W>62</W>
+      <H>42</H>
+    </Bounds>
+    <Viewer>
+      <ScopeID>0</ScopeID>
+      <Expression>`local BfsDfs$Position` n</Expression>
+      <ViewerClass>java__lang__Object_FormattedToStringView</ViewerClass>
+    </Viewer>
+  </Frame>
+  <Frame>
+    <Bounds>
+      <AutoSize>true</AutoSize>
+      <X>100</X>
+      <Y>360</Y>
+      <W>62</W>
+      <H>42</H>
+    </Bounds>
+    <Viewer>
+      <ScopeID>0</ScopeID>
+      <Expression>`local BfsDfs$Position` start</Expression>
+      <ViewerClass>java__lang__Object_FormattedToStringView</ViewerClass>
+    </Viewer>
+    <ScopeTest>None</ScopeTest>
+  </Frame>
+  <Frame>
+    <Bounds>
+      <AutoSize>true</AutoSize>
+      <X>180</X>
+      <Y>360</Y>
+      <W>62</W>
+      <H>42</H>
+    </Bounds>
+    <Viewer>
+      <ScopeID>0</ScopeID>
+      <Expression>`local BfsDfs$Position` p</Expression>
+      <ViewerClass>java__lang__Object_FormattedToStringView</ViewerClass>
+    </Viewer>
+  </Frame>
+  <TextBox>
+    <Text>&lt;html&gt;&lt;center&gt;&lt;h1&gt;Recursive Depth-First Search&lt;/h1&gt;&lt;/center&gt;&lt;/html&gt;</Text>
+    <Position>
+      <X>254</X>
+      <Y>0</Y>
+    </Position>
+    <Transparent>true</Transparent>
+  </TextBox>
+  <Size>
+    <W>890</W>
+    <H>621</H>
+  </Size>
+  <ESize>
+    <W>890</W>
+    <H>621</H>
+  </ESize>
+  <Excl>*#&lt;clinit&gt;
+*#&lt;init&gt;
+BfsDfs#&lt;init&gt;
+BfsDfs#&lt;init&gt;([[I)V
+BfsDfs#isValid(LBfsDfs$Position;)Z
+BfsDfs#isVisited(LBfsDfs$Position;)Z
+BfsDfs#printGrid()V
+BfsDfs#process(LBfsDfs$Position;)V
+BfsDfs#visit(LBfsDfs$Position;)V
+BfsDfs$Position
+BfsDfs$Position#&lt;init&gt;
+BfsDfs$Position#&lt;init&gt;(LBfsDfs;II)V
+BfsDfs$Position#neighbors()[LBfsDfs$Position;
+BfsDfs$Position#toString()Ljava/lang/String;</Excl>
+</Canvas>
