@@ -2,9 +2,9 @@
 * LinkedStrand.java
 * Provides a linked chunk list implementation of the DnaStrand interface.
 * 
-* @author   Your Name <you@tigermail.auburn.edu>
+* @author   Xing Wang <xzw0005@tigermail.auburn.edu>
 * @author   Dean Hendrix <dh@auburn.edu>
-* @version  2015-10-12
+* @version  2015-10-22
 *
 */
 public class LinkedStrand implements DnaStrand {
@@ -61,6 +61,8 @@ public class LinkedStrand implements DnaStrand {
     */
     public LinkedStrand(String s) {
         // YOU MUST COMPLETE THIS METHOD
+        front = rear = new Node(s, null);
+        size = s.length();
     }
 
 
@@ -73,6 +75,8 @@ public class LinkedStrand implements DnaStrand {
     */
     public void initializeFrom(String source) {
         // YOU MUST COMPLETE THIS METHOD
+        front = rear = new Node(source, null);
+        size = source.length();
     }
 
 
@@ -88,7 +92,17 @@ public class LinkedStrand implements DnaStrand {
     */
     public DnaStrand cutWith(String enzyme) {
         // YOU MUST COMPLETE THIS METHOD
-        return null;
+        //return null;
+        if (front == null || front != rear)
+            throw new IllegalStateException();
+        String s = front.dnaInfo;
+        int pos = s.indexOf(enzyme);
+        if (pos == -1)
+            return EMPTY_STRAND;
+        String remain = s.substring(pos + enzyme.length());
+        DnaStrand ret = new LinkedStrand(remain);
+        initializeFrom(s.substring(0, pos));
+        return ret;
     }
 
 
@@ -102,7 +116,20 @@ public class LinkedStrand implements DnaStrand {
     */
     public DnaStrand cutAndSplice(String enzyme, String splice) {
         // YOU MUST COMPLETE THIS METHOD
-        return null;
+        //return null;
+        if (front == null || front != rear)
+            throw new IllegalStateException();
+        DnaStrand ret = new LinkedStrand();
+        String s = front.dnaInfo;
+        int pos = s.indexOf(enzyme);
+        while (pos >= 0) {
+            ret.append(s.substring(0, pos));
+            ret.append(splice);
+            s = s.substring(pos + enzyme.length());
+            pos = s.indexOf(enzyme);            
+        }
+        ret.append(s);
+        return ret;
     }
 
 
@@ -112,14 +139,21 @@ public class LinkedStrand implements DnaStrand {
     */
     public long size() {
         // YOU MUST COMPLETE THIS METHOD
-        return -1;
+        return size;
     }
 
 
     @Override
     public String toString() {
         // YOU MUST COMPLETE THIS METHOD
-        return "";
+        //return "";
+        Node n = this.front;
+        String s = "";
+        while (n != null) {
+            s += n.dnaInfo;
+            n = n.next;
+        }
+        return s;
     }
 
 
@@ -137,7 +171,20 @@ public class LinkedStrand implements DnaStrand {
     */
     public DnaStrand append(DnaStrand dna) {
         // YOU MUST COMPLETE THIS METHOD
-        return null;
+        //return null;
+        if (dna instanceof LinkedStrand) {
+            LinkedStrand ss = (LinkedStrand) dna;
+            if (front == null)
+                front = ss.front;
+            else
+                rear.next = ss.front;
+            rear = ss.rear;
+            size += ss.size();
+            return this;
+        }
+        else {
+            return append(dna.toString());
+        }
     }
 
 
@@ -153,7 +200,17 @@ public class LinkedStrand implements DnaStrand {
     */
     public DnaStrand append(String dna) {
         // YOU MUST COMPLETE THIS METHOD
-        return null;
+        //return null;
+        Node n = new Node(dna, null);
+        if (front == null) {
+            front = rear = n;
+        }
+        else {
+            rear.next = n;
+            rear = rear.next;
+        }
+        size += dna.length();
+        return this;
     }
 
 }

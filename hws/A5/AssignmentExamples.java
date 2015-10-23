@@ -8,7 +8,7 @@
  */
 public class AssignmentExamples {
    public static void main(String[] args) {
-      DnaStrand dna = new ArrayStrand("AGTCGAATTCAAGTCGAATTCAGTCA");
+      DnaStrand dna = new LinkedStrand("AGTCGAATTCAAGTCGAATTCAGTCA");
       String enzyme = "GAATTC";
       String splice = "XXYY";
       System.out.println("DnaStrand method cutWith()");
@@ -20,7 +20,7 @@ public class AssignmentExamples {
    	
       System.out.println();
    
-      dna = new ArrayStrand("AGTCGAATTCAAGTCGAATTCAGTCA");
+      dna = new LinkedStrand("AGTCGAATTCAAGTCGAATTCAGTCA");
       enzyme = "GAATTC";
       splice = "XXYY";
       System.out.println("DnaStrand method cutAndSplice()");
